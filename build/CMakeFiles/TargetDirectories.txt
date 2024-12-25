@@ -1,0 +1,3 @@
+D:/STM32OBJ/demo/build/CMakeFiles/gxw_build_product.elf.dir
+D:/STM32OBJ/demo/build/CMakeFiles/edit_cache.dir
+D:/STM32OBJ/demo/build/CMakeFiles/rebuild_cache.dir
