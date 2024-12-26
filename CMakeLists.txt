@@ -5,6 +5,13 @@ set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_PROCESSOR ARM)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
+# Set toolchain paths
+set(TOOLCHAIN_PATH "D:/tool/cmake/cmake_zip/arm-gnu-toolchain")
+set(CMAKE_C_COMPILER "${TOOLCHAIN_PATH}/bin/arm-none-eabi-gcc.exe")
+set(CMAKE_ASM_COMPILER "${TOOLCHAIN_PATH}/bin/arm-none-eabi-gcc.exe")
+set(CMAKE_OBJCOPY "${TOOLCHAIN_PATH}/bin/arm-none-eabi-objcopy.exe")
+set(CMAKE_SIZE "${TOOLCHAIN_PATH}/bin/arm-none-eabi-size.exe")
+
 project(gxw_build_product C ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
@@ -35,37 +42,47 @@ set(CMSIS_SOURCES
 # Project sources
 set(PROJECT_SOURCES
     src/main.c
-    src/bsp_config.c
     src/startup_stm32h750xx.s
+    src/stm32h7xx_hal_msp.c
+    src/config/bsp_config.c
+    src/config/retarget.c
+    src/init/init_task.c
+    src/init/uart_init.c
+    src/init/freertos_init.c
+    src/tasks/led_task.c
 )
 
 # Include directories
 set(EXTRA_INCLUDES
     ${CMAKE_SOURCE_DIR}/Inc
+    ${CMAKE_SOURCE_DIR}/Inc/config
+    ${CMAKE_SOURCE_DIR}/Inc/init
+    ${CMAKE_SOURCE_DIR}/Inc/tasks
     ${CMAKE_SOURCE_DIR}/Drivers/STM32H7xx_HAL_Driver/Inc
     ${CMAKE_SOURCE_DIR}/Drivers/CMSIS/Device/ST/STM32H7xx/Include
     ${CMAKE_SOURCE_DIR}/Drivers/CMSIS/Include
+    ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/include
+    ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1
+    ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2
 )
 
-# Include FreeRTOS configuration
-include(${CMAKE_SOURCE_DIR}/freertos_config.cmake)
-
-# Add all include directories
-include_directories(${EXTRA_INCLUDES})
-
-# Add definitions
-add_definitions(
-    -DUSE_HAL_DRIVER
-    -DSTM32H750xx
-)
+# Definitions
+add_definitions(-DUSE_HAL_DRIVER -DSTM32H750xx)
 
 # Create executable
 add_executable(${PROJECT_NAME}.elf 
     ${PROJECT_SOURCES}
     ${HAL_SOURCES}
     ${CMSIS_SOURCES}
-    ${FREERTOS_SOURCES}
+    ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/tasks.c
+    ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/list.c
+    ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/queue.c
+    ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/timers.c
+    ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c
+    ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
 )
+
+target_include_directories(${PROJECT_NAME}.elf PRIVATE ${EXTRA_INCLUDES})
 
 # Create binary and hex files
 add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD

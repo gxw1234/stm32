@@ -1,24 +1,12 @@
-#include "stm32h7xx_hal.h"
+#include "main.h"
 #include "FreeRTOS.h"
 #include "task.h"
-#include "bsp_config.h"
-
-/* 任务函数原型声明 */
-void LED_Task(void *pvParameters);
-
-/* FreeRTOS静态内存分配 */
-static StaticTask_t xIdleTaskTCB;
-static StackType_t uxIdleTaskStack[configMINIMAL_STACK_SIZE];
-
-/* FreeRTOS空闲任务内存分配回调函数 */
-void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer,
-                                 StackType_t **ppxIdleTaskStackBuffer,
-                                 uint32_t *pulIdleTaskStackSize)
-{
-    *ppxIdleTaskTCBBuffer = &xIdleTaskTCB;
-    *ppxIdleTaskStackBuffer = uxIdleTaskStack;
-    *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
-}
+#include "config/bsp_config.h"
+#include "init/uart_init.h"
+#include "init/freertos_init.h"
+#include "init/init_task.h"
+#include "tasks/led_task.h"
+#include <stdio.h>
 
 int main(void)
 {
@@ -28,24 +16,23 @@ int main(void)
     /* 配置系统时钟 */
     SystemClock_Config();
 
-    /* 初始化所有配置的外设 */
+    /* 初始化GPIO */
     BSP_GPIO_Init();
+    
+    /* 初始化UART */
+    UART_Init();
+
+    /* 初始化FreeRTOS基础功能 */
+    FreeRTOS_Init();
+
+    /* 创建初始化任务，优先级高于LED任务 */
+    xTaskCreate(Init_Task, "Init", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
 
     /* 创建LED任务 */
-    xTaskCreate(LED_Task, "LED", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
-
+    xTaskCreate(LED_Task, "LED", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
+    
     /* 启动调度器 */
     vTaskStartScheduler();
+    
 
-    /* 正常情况下不会执行到这里，因为调度器会接管控制权 */
-    while (1) {}
-}
-
-void LED_Task(void *pvParameters)
-{
-    while(1)
-    {
-        HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_3);  // 翻转LED引脚状态
-        vTaskDelay(pdMS_TO_TICKS(500));         // 延时500毫秒
-    }
 }

@@ -24,7 +24,7 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 set(CMAKE_AR "D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-ar.exe")
 set(CMAKE_C_COMPILER_AR "D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-gcc-ar.exe")
-set(CMAKE_RANLIB "D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-ranlib.exe")
+set(CMAKE_RANLIB ":")
 set(CMAKE_C_COMPILER_RANLIB "D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-gcc-ranlib.exe")
 set(CMAKE_LINKER "D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-ld.exe")
 set(CMAKE_LINKER_LINK "")
