@@ -29,6 +29,7 @@
 #define HAL_CORTEX_MODULE_ENABLED
 #define HAL_TIM_MODULE_ENABLED
 #define HAL_RTC_MODULE_ENABLED
+#define HAL_UART_MODULE_ENABLED
 
 /* ########################## Oscillator Values adaptation ####################*/
 /**
