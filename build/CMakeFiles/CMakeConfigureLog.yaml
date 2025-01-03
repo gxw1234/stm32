@@ -5,371 +5,10 @@ events:
     kind: "message-v1"
     backtrace:
       - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:200 (message)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:15 (project)"
     message: |
       The target system is: Generic -  - ARM
       The host system is: Windows - 10.0.22631 - AMD64
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: CMAKE_C_COMPILER-NOTFOUND 
-      Build flags: 
-      Id flags:  
-      
-      The output was:
-      no such file or directory
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: CMAKE_C_COMPILER-NOTFOUND 
-      Build flags: 
-      Id flags: -c 
-      
-      The output was:
-      no such file or directory
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: CMAKE_C_COMPILER-NOTFOUND 
-      Build flags: 
-      Id flags: -Aa 
-      
-      The output was:
-      no such file or directory
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: CMAKE_C_COMPILER-NOTFOUND 
-      Build flags: 
-      Id flags: -D__CLASSIC_C__ 
-      
-      The output was:
-      no such file or directory
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: CMAKE_C_COMPILER-NOTFOUND 
-      Build flags: 
-      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
-      
-      The output was:
-      no such file or directory
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: CMAKE_C_COMPILER-NOTFOUND 
-      Build flags: 
-      Id flags: -c;-I__does_not_exist__ 
-      
-      The output was:
-      no such file or directory
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: CMAKE_C_COMPILER-NOTFOUND 
-      Build flags: 
-      Id flags:  
-      
-      The output was:
-      no such file or directory
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: CMAKE_C_COMPILER-NOTFOUND 
-      Build flags: 
-      Id flags: -c 
-      
-      The output was:
-      no such file or directory
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: CMAKE_C_COMPILER-NOTFOUND 
-      Build flags: 
-      Id flags: -Aa 
-      
-      The output was:
-      no such file or directory
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: CMAKE_C_COMPILER-NOTFOUND 
-      Build flags: 
-      Id flags: -D__CLASSIC_C__ 
-      
-      The output was:
-      no such file or directory
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: CMAKE_C_COMPILER-NOTFOUND 
-      Build flags: 
-      Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
-      
-      The output was:
-      no such file or directory
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: CMAKE_C_COMPILER-NOTFOUND 
-      Build flags: 
-      Id flags: -c;-I__does_not_exist__ 
-      
-      The output was:
-      no such file or directory
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple (clang|LLVM) version)":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is OrangeC using "--version" did not match "occ \\(OrangeC\\) Version":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is HP using "-V" did not match "HP C":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is IntelLLVM using "--version" did not match "(Intel[^
-      ]+oneAPI)":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is TIClang using "--version" did not match "(TI (.*) Clang Compiler)":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)|(Arm Compiler)":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
-  -
-    kind: "message-v1"
-    backtrace:
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1250 (message)"
-      - "D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
-    message: |
-      Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
-...
-
----
-events:
   -
     kind: "message-v1"
     backtrace:
@@ -444,20 +83,20 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "D:/STM32OBJ/demo/build/CMakeFiles/CMakeScratch/TryCompile-htx7k5"
-      binary: "D:/STM32OBJ/demo/build/CMakeFiles/CMakeScratch/TryCompile-htx7k5"
+      source: "D:/STM32OBJ/demo/build/CMakeFiles/CMakeScratch/TryCompile-ylewvf"
+      binary: "D:/STM32OBJ/demo/build/CMakeFiles/CMakeScratch/TryCompile-ylewvf"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
-      CMAKE_C_FLAGS_DEBUG: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/STM32OBJ/demo/build/CMakeFiles/CMakeScratch/TryCompile-htx7k5'
+        Change Dir: 'D:/STM32OBJ/demo/build/CMakeFiles/CMakeScratch/TryCompile-ylewvf'
         
-        Run Build Command(s): D:/tool/cmake/cmake_zip/ninja/ninja.exe -v cmTC_b866c
-        [1/2] D:\\tool\\cmake\\cmake_zip\\arm-gnu-toolchain\\bin\\arm-none-eabi-gcc.exe   -v -o CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.obj -c D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): D:/tool/cmake/cmake_zip/ninja/ninja.exe -v cmTC_360fb
+        [1/2] D:\\tool\\cmake\\cmake_zip\\arm-gnu-toolchain\\bin\\arm-none-eabi-gcc.exe   -v -o CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.obj -c D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=D:\\tool\\cmake\\cmake_zip\\arm-gnu-toolchain\\bin\\arm-none-eabi-gcc.exe
         Target: arm-none-eabi
@@ -465,8 +104,8 @@ events:
         Thread model: single
         Supported LTO compression algorithms: zlib
         gcc version 14.2.1 20241119 (Arm GNU Toolchain 14.2.Rel1 (Build arm-14.52)) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b866c.dir/'
-         D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1.exe -quiet -v -iprefix D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/ -isysroot D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../arm-none-eabi -D__USES_INITFINI__ D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_b866c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -o C:\\Users\\A\\AppData\\Local\\Temp\\ccuFFmOr.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_360fb.dir/'
+         D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1.exe -quiet -v -iprefix D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/ -isysroot D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../arm-none-eabi -D__USES_INITFINI__ D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_360fb.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -o C:\\Users\\A\\AppData\\Local\\Temp\\ccNydtUJ.s
         GNU C17 (Arm GNU Toolchain 14.2.Rel1 (Build arm-14.52)) version 14.2.1 20241119 (arm-none-eabi)
         	compiled by GNU C version 9.3-win32 20200320, GMP version 6.2.1, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.15-1-g835ea3a-GMP
         
@@ -483,13 +122,13 @@ events:
          D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/include
         End of search list.
         Compiler executable checksum: 63ce4b303c7eb47a24bbf869f5c70b36
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b866c.dir/'
-         D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.obj C:\\Users\\A\\AppData\\Local\\Temp\\ccuFFmOr.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_360fb.dir/'
+         D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.obj C:\\Users\\A\\AppData\\Local\\Temp\\ccNydtUJ.s
         GNU assembler version 2.43.1 (arm-none-eabi) using BFD version (Arm GNU Toolchain 14.2.Rel1 (Build arm-14.52)) 2.43.1.20241119
         COMPILER_PATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../libexec/gcc/arm-none-eabi/14.2.1/;D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../libexec/gcc/;D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/bin/
         LIBRARY_PATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/;D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/;D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/;D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../arm-none-eabi/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.'\x0d
-        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && D:\\tool\\cmake\\cmake_zip\\cmake-3.31.3\\bin\\cmake.exe -E rm -f libcmTC_b866c.a && D:\\tool\\cmake\\cmake_zip\\arm-gnu-toolchain\\bin\\arm-none-eabi-ar.exe qc libcmTC_b866c.a  CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.obj && cd ."
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.'\x0d
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && D:\\tool\\cmake\\cmake_zip\\cmake-3.31.3\\bin\\cmake.exe -E rm -f libcmTC_360fb.a && D:\\tool\\cmake\\cmake_zip\\arm-gnu-toolchain\\bin\\arm-none-eabi-ar.exe qc libcmTC_360fb.a  CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.obj && D:\\tool\\cmake\\cmake_zip\\arm-gnu-toolchain\\bin\\arm-none-eabi-ranlib.exe libcmTC_360fb.a && cd ."
         
       exitCode: 0
   -
@@ -522,10 +161,10 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: 'D:/STM32OBJ/demo/build/CMakeFiles/CMakeScratch/TryCompile-htx7k5']
+        ignore line: [Change Dir: 'D:/STM32OBJ/demo/build/CMakeFiles/CMakeScratch/TryCompile-ylewvf']
         ignore line: []
-        ignore line: [Run Build Command(s): D:/tool/cmake/cmake_zip/ninja/ninja.exe -v cmTC_b866c]
-        ignore line: [[1/2] D:\\tool\\cmake\\cmake_zip\\arm-gnu-toolchain\\bin\\arm-none-eabi-gcc.exe   -v -o CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.obj -c D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): D:/tool/cmake/cmake_zip/ninja/ninja.exe -v cmTC_360fb]
+        ignore line: [[1/2] D:\\tool\\cmake\\cmake_zip\\arm-gnu-toolchain\\bin\\arm-none-eabi-gcc.exe   -v -o CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.obj -c D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=D:\\tool\\cmake\\cmake_zip\\arm-gnu-toolchain\\bin\\arm-none-eabi-gcc.exe]
         ignore line: [Target: arm-none-eabi]
@@ -533,8 +172,8 @@ events:
         ignore line: [Thread model: single]
         ignore line: [Supported LTO compression algorithms: zlib]
         ignore line: [gcc version 14.2.1 20241119 (Arm GNU Toolchain 14.2.Rel1 (Build arm-14.52)) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b866c.dir/']
-        ignore line: [ D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1.exe -quiet -v -iprefix D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/ -isysroot D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../arm-none-eabi -D__USES_INITFINI__ D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_b866c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -o C:\\Users\\A\\AppData\\Local\\Temp\\ccuFFmOr.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_360fb.dir/']
+        ignore line: [ D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../libexec/gcc/arm-none-eabi/14.2.1/cc1.exe -quiet -v -iprefix D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/ -isysroot D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../arm-none-eabi -D__USES_INITFINI__ D:/tool/cmake/cmake_zip/cmake-3.31.3/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_360fb.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -o C:\\Users\\A\\AppData\\Local\\Temp\\ccNydtUJ.s]
         ignore line: [GNU C17 (Arm GNU Toolchain 14.2.Rel1 (Build arm-14.52)) version 14.2.1 20241119 (arm-none-eabi)]
         ignore line: [	compiled by GNU C version 9.3-win32 20200320  GMP version 6.2.1  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.15-1-g835ea3a-GMP]
         ignore line: []
@@ -551,8 +190,8 @@ events:
         ignore line: [ D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 63ce4b303c7eb47a24bbf869f5c70b36]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b866c.dir/']
-        ignore line: [ D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.obj C:\\Users\\A\\AppData\\Local\\Temp\\ccuFFmOr.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_360fb.dir/']
+        ignore line: [ D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/bin/as.exe -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.obj C:\\Users\\A\\AppData\\Local\\Temp\\ccNydtUJ.s]
         ignore line: [GNU assembler version 2.43.1 (arm-none-eabi) using BFD version (Arm GNU Toolchain 14.2.Rel1 (Build arm-14.52)) 2.43.1.20241119]
         ignore line: [COMPILER_PATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../libexec/gcc/arm-none-eabi/14.2.1/]
         ignore line: [D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../libexec/gcc/]
@@ -561,8 +200,8 @@ events:
         ignore line: [D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/]
         ignore line: [D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/]
         ignore line: [D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/../arm-none-eabi/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.'\x0d]
-        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && D:\\tool\\cmake\\cmake_zip\\cmake-3.31.3\\bin\\cmake.exe -E rm -f libcmTC_b866c.a && D:\\tool\\cmake\\cmake_zip\\arm-gnu-toolchain\\bin\\arm-none-eabi-ar.exe qc libcmTC_b866c.a  CMakeFiles/cmTC_b866c.dir/CMakeCCompilerABI.c.obj && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.obj' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.'\x0d]
+        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && D:\\tool\\cmake\\cmake_zip\\cmake-3.31.3\\bin\\cmake.exe -E rm -f libcmTC_360fb.a && D:\\tool\\cmake\\cmake_zip\\arm-gnu-toolchain\\bin\\arm-none-eabi-ar.exe qc libcmTC_360fb.a  CMakeFiles/cmTC_360fb.dir/CMakeCCompilerABI.c.obj && D:\\tool\\cmake\\cmake_zip\\arm-gnu-toolchain\\bin\\arm-none-eabi-ranlib.exe libcmTC_360fb.a && cd ."]
         ignore line: []
         ignore line: []
         implicit libs: []

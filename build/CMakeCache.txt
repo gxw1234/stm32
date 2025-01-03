@@ -20,9 +20,6 @@ CMAKE_ADDR2LINE:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-
 //Path to a program.
 CMAKE_AR:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-ar.exe
 
-//ASM compiler
-CMAKE_ASM_COMPILER:STRING=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-gcc.exe
-
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
 CMAKE_ASM_COMPILER_AR:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-gcc-ar.exe
@@ -35,16 +32,16 @@ CMAKE_ASM_COMPILER_RANLIB:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin
 CMAKE_ASM_FLAGS:STRING=
 
 //Flags used by the ASM compiler during DEBUG builds.
-CMAKE_ASM_FLAGS_DEBUG:STRING=
+CMAKE_ASM_FLAGS_DEBUG:STRING=-g
 
 //Flags used by the ASM compiler during MINSIZEREL builds.
-CMAKE_ASM_FLAGS_MINSIZEREL:STRING=
+CMAKE_ASM_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 
 //Flags used by the ASM compiler during RELEASE builds.
-CMAKE_ASM_FLAGS_RELEASE:STRING=
+CMAKE_ASM_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the ASM compiler during RELWITHDEBINFO builds.
-CMAKE_ASM_FLAGS_RELWITHDEBINFO:STRING=
+CMAKE_ASM_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
@@ -65,16 +62,16 @@ CMAKE_C_COMPILER_RANLIB:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/a
 CMAKE_C_FLAGS:STRING=
 
 //Flags used by the C compiler during DEBUG builds.
-CMAKE_C_FLAGS_DEBUG:STRING=
+CMAKE_C_FLAGS_DEBUG:STRING=-g
 
 //Flags used by the C compiler during MINSIZEREL builds.
-CMAKE_C_FLAGS_MINSIZEREL:STRING=
+CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 
 //Flags used by the C compiler during RELEASE builds.
-CMAKE_C_FLAGS_RELEASE:STRING=
+CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the C compiler during RELWITHDEBINFO builds.
-CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Path to a program.
 CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
@@ -136,9 +133,6 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_NM:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-nm.exe
 
 //Path to a program.
-CMAKE_OBJCOPY:FILEPATH=CMAKE_OBJCOPY-NOTFOUND
-
-//Path to a program.
 CMAKE_OBJDUMP:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-objdump.exe
 
 //Value Computed by CMake
@@ -149,6 +143,9 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=gxw_build_product
+
+//Path to a program.
+CMAKE_RANLIB:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-ranlib.exe
 
 //Path to a program.
 CMAKE_READELF:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-readelf.exe
@@ -206,9 +203,6 @@ CMAKE_STRIP:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
-//No help, variable specified on the command line.
-CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=
-
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
@@ -233,8 +227,6 @@ gxw_build_product_SOURCE_DIR:STATIC=D:/STM32OBJ/demo
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_ASM_COMPILER
-CMAKE_ASM_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ASM_COMPILER_AR
 CMAKE_ASM_COMPILER_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ASM_COMPILER_RANLIB
@@ -285,7 +277,7 @@ CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
 //Path to cache edit program executable.
 CMAKE_EDIT_COMMAND:INTERNAL=D:/tool/cmake/cmake_zip/cmake-3.31.3/bin/cmake-gui.exe
 //Executable file format
-CMAKE_EXECUTABLE_FORMAT:INTERNAL=Unknown
+CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
 CMAKE_EXE_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_DEBUG
@@ -331,14 +323,12 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
 CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
-//ADVANCED property for variable: CMAKE_OBJCOPY
-CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
 CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
-//noop for ranlib
-CMAKE_RANLIB:INTERNAL=:
+//ADVANCED property for variable: CMAKE_RANLIB
+CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_READELF
 CMAKE_READELF-ADVANCED:INTERNAL=1
 //Path to CMake installation.
