@@ -1,16 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
 
 # Toolchain settings must be set before project()
-set(CMAKE_SYSTEM_NAME Generic)
-set(CMAKE_SYSTEM_PROCESSOR ARM)
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/arm-none-eabi-toolchain.cmake)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
-
-# Set toolchain paths
-set(TOOLCHAIN_PATH "D:/tool/cmake/cmake_zip/arm-gnu-toolchain")
-set(CMAKE_C_COMPILER "${TOOLCHAIN_PATH}/bin/arm-none-eabi-gcc.exe")
-set(CMAKE_ASM_COMPILER "${TOOLCHAIN_PATH}/bin/arm-none-eabi-gcc.exe")
-set(CMAKE_OBJCOPY "${TOOLCHAIN_PATH}/bin/arm-none-eabi-objcopy.exe")
-set(CMAKE_SIZE "${TOOLCHAIN_PATH}/bin/arm-none-eabi-size.exe")
 
 project(gxw_build_product C ASM)
 set(CMAKE_C_STANDARD 11)
@@ -48,8 +40,11 @@ set(PROJECT_SOURCES
     src/config/retarget.c
     src/init/init_task.c
     src/init/uart_init.c
+    src/init/spi_init.c
     src/init/freertos_init.c
+    src/init/gpio_init.c
     src/tasks/led_task.c
+    src/tasks/spi_task.c
 )
 
 # Include directories

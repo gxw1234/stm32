@@ -1,16 +1,28 @@
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_PROCESSOR ARM)
 
-# Set the path to your toolchain
-set(TOOLCHAIN_PATH "D:/tool/cmake/cmake_zip/arm-gnu-toolchain")
+# Get toolchain path from environment variable
+if(DEFINED ENV{ARM_TOOLCHAIN_PATH})
+    set(TOOLCHAIN_PATH $ENV{ARM_TOOLCHAIN_PATH})
+else()
+    message(FATAL_ERROR "Please set ARM_TOOLCHAIN_PATH environment variable")
+endif()
 
 # The triplet to use for the target
 set(TARGET_TRIPLET "arm-none-eabi")
 
 # Set the compilers
-set(CMAKE_C_COMPILER "${TOOLCHAIN_PATH}/bin/${TARGET_TRIPLET}-gcc.exe")
-set(CMAKE_CXX_COMPILER "${TOOLCHAIN_PATH}/bin/${TARGET_TRIPLET}-g++.exe")
-set(CMAKE_ASM_COMPILER "${TOOLCHAIN_PATH}/bin/${TARGET_TRIPLET}-gcc.exe")
+if(CMAKE_HOST_WIN32)
+    set(EXE_SUFFIX ".exe")
+else()
+    set(EXE_SUFFIX "")
+endif()
+
+set(CMAKE_C_COMPILER "${TOOLCHAIN_PATH}/bin/${TARGET_TRIPLET}-gcc${EXE_SUFFIX}")
+set(CMAKE_CXX_COMPILER "${TOOLCHAIN_PATH}/bin/${TARGET_TRIPLET}-g++${EXE_SUFFIX}")
+set(CMAKE_ASM_COMPILER "${TOOLCHAIN_PATH}/bin/${TARGET_TRIPLET}-gcc${EXE_SUFFIX}")
+set(CMAKE_OBJCOPY "${TOOLCHAIN_PATH}/bin/${TARGET_TRIPLET}-objcopy${EXE_SUFFIX}")
+set(CMAKE_SIZE "${TOOLCHAIN_PATH}/bin/${TARGET_TRIPLET}-size${EXE_SUFFIX}")
 
 # Set the compiler flags
 set(CMAKE_C_FLAGS_INIT "-mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard")

@@ -7,7 +7,7 @@ void LED_Task(void *pvParameters)
     while(1)
     {
         HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_3);
-        printf("LED Toggle Count---------: %lu\r\n", ++count);
+        // printf("LED Toggle Count---------: %lu\r\n", ++count);
         vTaskDelay(500);
     }
 }
