@@ -29,7 +29,7 @@ CMAKE_ASM_COMPILER_AR:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm
 CMAKE_ASM_COMPILER_RANLIB:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-gcc-ranlib.exe
 
 //Flags used by the ASM compiler during all build types.
-CMAKE_ASM_FLAGS:STRING=-mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard
+CMAKE_ASM_FLAGS:STRING=
 
 //Flags used by the ASM compiler during DEBUG builds.
 CMAKE_ASM_FLAGS_DEBUG:STRING=-g
@@ -47,6 +47,9 @@ CMAKE_ASM_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 // MinSizeRel ...
 CMAKE_BUILD_TYPE:STRING=
 
+//C compiler
+CMAKE_C_COMPILER:STRING=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-gcc.exe
+
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
 CMAKE_C_COMPILER_AR:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-gcc-ar.exe
@@ -56,7 +59,7 @@ CMAKE_C_COMPILER_AR:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-n
 CMAKE_C_COMPILER_RANLIB:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-gcc-ranlib.exe
 
 //Flags used by the C compiler during all build types.
-CMAKE_C_FLAGS:STRING=-mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard
+CMAKE_C_FLAGS:STRING=
 
 //Flags used by the C compiler during DEBUG builds.
 CMAKE_C_FLAGS_DEBUG:STRING=-g
@@ -98,7 +101,7 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=D:/STM32OBJ/demo/build/CMakeFiles/pkgRedirects
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/STM32H750_HelloWorld
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/gxw_build_product
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-ld.exe
@@ -128,9 +131,6 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
 CMAKE_NM:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-nm.exe
-
-//Path to a program.
-CMAKE_OBJCOPY:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-objcopy.exe
 
 //Path to a program.
 CMAKE_OBJDUMP:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-objdump.exe
@@ -203,32 +203,11 @@ CMAKE_STRIP:FILEPATH=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
-//No help, variable specified on the command line.
-CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=
-
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
-
-//Value Computed by CMake
-STM32H750_HelloWorld_BINARY_DIR:STATIC=D:/STM32OBJ/demo/build
-
-//Value Computed by CMake
-STM32H750_HelloWorld_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-STM32H750_HelloWorld_SOURCE_DIR:STATIC=D:/STM32OBJ/demo
-
-//Value Computed by CMake
-gxw_build__BINARY_DIR:STATIC=D:/STM32OBJ/demo/build
-
-//Value Computed by CMake
-gxw_build__IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-gxw_build__SOURCE_DIR:STATIC=D:/STM32OBJ/demo
 
 //Value Computed by CMake
 gxw_build_product_BINARY_DIR:STATIC=D:/STM32OBJ/demo/build
@@ -277,6 +256,8 @@ CMAKE_COMMAND:INTERNAL=D:/tool/cmake/cmake_zip/cmake-3.31.3/bin/cmake.exe
 CMAKE_CPACK_COMMAND:INTERNAL=D:/tool/cmake/cmake_zip/cmake-3.31.3/bin/cpack.exe
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=D:/tool/cmake/cmake_zip/cmake-3.31.3/bin/ctest.exe
+//ADVANCED property for variable: CMAKE_C_COMPILER
+CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_AR
 CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_RANLIB
@@ -342,8 +323,6 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
 CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
-//ADVANCED property for variable: CMAKE_OBJCOPY
-CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
 CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
 //Platform information initialized
