@@ -43,8 +43,10 @@ set(PROJECT_SOURCES
     src/init/spi_init.c
     src/init/freertos_init.c
     src/init/gpio_init.c
+    src/init/i2s_init.c
     src/tasks/led_task.c
     src/tasks/spi_task.c
+    src/tasks/i2s_task.c
 )
 
 # Include directories

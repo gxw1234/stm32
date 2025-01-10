@@ -31,6 +31,7 @@
 #define HAL_RTC_MODULE_ENABLED
 #define HAL_UART_MODULE_ENABLED
 #define HAL_SPI_MODULE_ENABLED
+#define HAL_I2S_MODULE_ENABLED
 
 /* ########################## Oscillator Values adaptation ####################*/
 /**
