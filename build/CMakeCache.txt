@@ -43,14 +43,12 @@ CMAKE_ASM_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the ASM compiler during RELWITHDEBINFO builds.
 CMAKE_ASM_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//No help, variable specified on the command line.
-CMAKE_BUILD_TYPE:STRING=Debug
+//Choose the type of build, options are: None Debug Release RelWithDebInfo
+// MinSizeRel ...
+CMAKE_BUILD_TYPE:STRING=
 
-//No help, variable specified on the command line.
-CMAKE_CXX_COMPILER:FILEPATH=C:/Users/A/.eide/tools/gcc_arm/bin/arm-none-eabi-g++.exe
-
-//No help, variable specified on the command line.
-CMAKE_C_COMPILER:FILEPATH=C:/Users/A/.eide/tools/gcc_arm/bin/arm-none-eabi-gcc.exe
+//C compiler
+CMAKE_C_COMPILER:STRING=D:/tool/cmake/cmake_zip/arm-gnu-toolchain/bin/arm-none-eabi-gcc.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -96,8 +94,8 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //Enable/Disable output of build database during the build.
 CMAKE_EXPORT_BUILD_DATABASE:BOOL=
 
-//No help, variable specified on the command line.
-CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
+//Enable/Disable output of compile commands during generation.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=D:/STM32OBJ/demo/build/CMakeFiles/pkgRedirects
