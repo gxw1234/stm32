@@ -8,9 +8,13 @@
 #include "init/spi_init.h"
 #include "init/gpio_init.h"
 #include "init/i2s_init.h"
+#include "init/i2c_init.h"
+#include "init/adc_init.h"
 #include "tasks/led_task.h"
 #include "tasks/spi_task.h"
 #include "tasks/i2s_task.h"
+#include "tasks/i2c_task.h"
+#include "tasks/adc_task.h"
 #include <stdio.h>
 
 int main(void)
@@ -26,6 +30,12 @@ int main(void)
     
     /* 初始化UART */
     UART_Init();
+
+    /* 初始化I2C */
+    I2C_Init();
+
+    /* 初始化ADC */
+    ADC_Init();
 
     /* 初始化SPI */
     SPI1_Init();
@@ -48,15 +58,23 @@ int main(void)
     */
     xTaskCreate(LED_Task, "LED", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
 
+    /* 创建I2C任务 */
+    // xTaskCreate(I2C_Task, "I2C", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
+
+    /* 创建ADC任务 */
+    xTaskCreate(ADC_Task, "ADC", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
+
     /* 创建SPI任务 
     优先级1
     */
-    xTaskCreate(SPI_Task, "SPI", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
+    // xTaskCreate(SPI_Task, "SPI", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
 
     /* 创建I2S任务
     优先级1
     */
-    xTaskCreate(I2S_Task, "I2S", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
+    // xTaskCreate(I2S_Task, "I2S", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
+
+
 
     /* 启动调度器   */
     vTaskStartScheduler();

@@ -19,12 +19,28 @@ set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32H750VBTx_FLASH.ld)
 set(CMAKE_EXE_LINKER_FLAGS "${CPU_FLAGS} -specs=nano.specs -specs=nosys.specs -T${LINKER_SCRIPT} -Wl,--gc-sections -static -Wl,--start-group -lc -lm -Wl,--end-group")
 
 # HAL Library sources
-file(GLOB_RECURSE HAL_SOURCES 
-    "Drivers/STM32H7xx_HAL_Driver/Src/*.c"
+set(HAL_SOURCES
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2s.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2s_ex.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.c
+    Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.c
 )
-
-# Remove template files
-list(FILTER HAL_SOURCES EXCLUDE REGEX ".*template\\.c$")
 
 # CMSIS sources
 set(CMSIS_SOURCES
@@ -44,9 +60,13 @@ set(PROJECT_SOURCES
     src/init/freertos_init.c
     src/init/gpio_init.c
     src/init/i2s_init.c
+    src/init/i2c_init.c
+    src/init/adc_init.c
     src/tasks/led_task.c
     src/tasks/spi_task.c
     src/tasks/i2s_task.c
+    src/tasks/i2c_task.c
+    src/tasks/adc_task.c
 )
 
 # Include directories

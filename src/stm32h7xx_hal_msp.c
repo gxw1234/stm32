@@ -1,7 +1,9 @@
+#include "main.h"
 #include "stm32h7xx_hal.h"
+#include "stm32h7xx_hal_adc.h"
+#include "stm32h7xx_hal_adc_ex.h"
 #include "stm32h7xx_hal_spi.h"
 #include "stm32h7xx_hal_i2s.h"
-#include "main.h"
 
 void HAL_MspInit(void)
 {
@@ -157,5 +159,87 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi)
         /* 取消GPIO配置 */
         HAL_GPIO_DeInit(GPIOA, GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7);
         HAL_GPIO_DeInit(GPIOB, GPIO_PIN_4);
+    }
+}
+
+void HAL_I2C_MspInit(I2C_HandleTypeDef* hi2c)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
+    
+    if(hi2c->Instance == I2C1)
+    {
+        /* I2C1 时钟源配置 */
+        PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_I2C1;
+        PeriphClkInitStruct.I2c123ClockSelection = RCC_I2C123CLKSOURCE_D2PCLK1;
+        if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+        {
+            Error_Handler();
+        }
+
+        /* 使能I2C1和GPIO时钟 */
+        __HAL_RCC_I2C1_CLK_ENABLE();
+        __HAL_RCC_GPIOB_CLK_ENABLE();
+
+        /* I2C1 GPIO配置 
+         PB8 ------> I2C1_SCL
+         PB9 ------> I2C1_SDA */
+        GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9;
+        GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
+        GPIO_InitStruct.Pull = GPIO_NOPULL;
+        GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+        GPIO_InitStruct.Alternate = GPIO_AF4_I2C1;
+        HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+    }
+}
+
+void HAL_I2C_MspDeInit(I2C_HandleTypeDef* hi2c)
+{
+    if(hi2c->Instance == I2C1)
+    {
+        /* 禁用I2C1时钟 */
+        __HAL_RCC_I2C1_CLK_DISABLE();
+      
+        /* I2C1 GPIO配置 */
+        HAL_GPIO_DeInit(GPIOB, GPIO_PIN_8|GPIO_PIN_9);
+    }
+}
+
+void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
+    
+    if(hadc->Instance == ADC1)
+    {
+        /* ADC时钟源配置 */
+        PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_ADC;
+        PeriphClkInitStruct.AdcClockSelection = RCC_ADCCLKSOURCE_CLKP;
+        if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+        {
+            Error_Handler();
+        }
+
+        /* 使能ADC和GPIO时钟 */
+        __HAL_RCC_ADC12_CLK_ENABLE();
+        __HAL_RCC_GPIOA_CLK_ENABLE();
+
+        /* ADC GPIO配置 
+           PA0 ------> ADC1_INP0 */
+        GPIO_InitStruct.Pin = GPIO_PIN_0;
+        GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+        HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    }
+}
+
+void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
+{
+    if(hadc->Instance == ADC1)
+    {
+        /* 禁用ADC时钟 */
+        __HAL_RCC_ADC12_CLK_DISABLE();
+      
+        /* ADC GPIO配置 */
+        HAL_GPIO_DeInit(GPIOA, GPIO_PIN_0);
     }
 }
