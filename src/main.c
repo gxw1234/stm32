@@ -56,25 +56,28 @@ int main(void)
     /* 创建LED任务 
     优先级1
     */
+
     xTaskCreate(LED_Task, "LED", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
 
-    /* 创建I2C任务 */
-    // xTaskCreate(I2C_Task, "I2C", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
+    /* 创建I2C任务
+     */
 
-    /* 创建ADC任务 */
-    xTaskCreate(ADC_Task, "ADC", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
+    xTaskCreate(I2C_Task, "I2C", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
+
+    /* 创建ADC任务
+     */
+    // xTaskCreate(ADC_Task, "ADC", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
 
     /* 创建SPI任务 
     优先级1
+    
     */
-    // xTaskCreate(SPI_Task, "SPI", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
+    xTaskCreate(SPI_Task, "SPI", configMINIMAL_STACK_SIZE * 8, NULL, 1, NULL);
 
     /* 创建I2S任务
     优先级1
     */
     // xTaskCreate(I2S_Task, "I2S", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
-
-
 
     /* 启动调度器   */
     vTaskStartScheduler();
