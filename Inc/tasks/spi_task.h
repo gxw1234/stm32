@@ -10,6 +10,8 @@ extern "C" {
 #include "init/spi_init.h"
 
 void SPI_Task(void *argument);
+void SPI_Transmit(uint8_t data) ;
+
 
 #ifdef __cplusplus
 }
