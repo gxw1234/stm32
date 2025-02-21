@@ -23,15 +23,15 @@ void I2C_Task(void *argument)
        
         status = HAL_I2C_Master_Transmit(&hi2c1, I2C_DEVICE_ADDR << 1, data, 2, HAL_MAX_DELAY);
         
-        if (status != HAL_OK)
-        {
+        // if (status != HAL_OK)
+        // {
            
-            printf("I2C write error\n");
-        }
-        else
-        {
-            printf("I2C write success\n");
-        }
+        //     printf("I2C write error\n");
+        // }
+        // else
+        // {
+        //     printf("I2C write success\n");
+        // }
 
         
         vTaskDelay(pdMS_TO_TICKS(1000));
