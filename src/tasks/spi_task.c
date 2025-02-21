@@ -11,6 +11,8 @@ static volatile uint8_t drdy_flag = 0;  // DRDY中断标志位
 /* DRDY中断回调函数 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+
+    printf("DRDY triggered, ready to read data\n");
     if(GPIO_Pin == GPIO_PIN_5)
     {
         drdy_flag = 1;  // 设置标志位，表示可以读取数据
@@ -23,9 +25,6 @@ void EXTI9_5_IRQHandler(void)
 {
     HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_5);  // 调用HAL库中断处理函数
 }
-
-
-
 
 /* 配置DRDY引脚为中断模式 */
 static void DRDY_INT_Init(void)
@@ -59,7 +58,6 @@ void SPI_Transmit(uint8_t data) {
     {
         Error_Handler();
     }
-
     /* 拉高CS结束传输 */
 
     SPI_CS_HIGH();
@@ -74,48 +72,62 @@ void SPI_Task(void *argument)
     /* 初始化DRDY中断 */
     DRDY_INT_Init();
 
+    /* 确保电源稳定，等待至少50us */
+    vTaskDelay(pdMS_TO_TICKS(1));  // 用1ms确保足够
+
+    /* 拉低CS开始通信 */
+    SPI_CS_LOW();
+    vTaskDelay(pdMS_TO_TICKS(1));  // 确保td(CSSC)
+
     /* 发送复位命令 */
     SPI_Transmit(0x06);  // RESET命令
-    vTaskDelay(pdMS_TO_TICKS(1));  // 延迟1ms确保复位完成
+    vTaskDelay(pdMS_TO_TICKS(1));  // 等待至少50us + 32·t(CLK)
 
-    // /* 配置寄存器0: PGA=1, 连续转换模式 */
-    // SPI_Transmit(0x40);  // WREG命令，写寄存器0
-    // SPI_Transmit(0x01);  // 配置数据
-    // vTaskDelay(pdMS_TO_TICKS(1));
-
-    // /* 配置寄存器1: 20SPS，正常模式 */
-    // SPI_Transmit(0x41);  // WREG命令，写寄存器1
-    // SPI_Transmit(0x04);  // 配置数据
-    // vTaskDelay(pdMS_TO_TICKS(1));
-
-    // /* 配置寄存器2: 外部参考 */
-    // SPI_Transmit(0x42);  // WREG命令，写寄存器2
-    // SPI_Transmit(0x40);  // 配置数据
-    // vTaskDelay(pdMS_TO_TICKS(1));
-
-    // /* 配置寄存器3: IDAC关闭，DRDY模式 */
-    // SPI_Transmit(0x43);  // WREG命令，写寄存器3
-    // SPI_Transmit(0x00);  // 配置数据
-    // vTaskDelay(pdMS_TO_TICKS(1));
-
-    /* 发送启动命令 */
-    SPI_Transmit(0x08);  // START/SYNC命令
-    SPI_Transmit(0x04);
-    SPI_Transmit(0x10);
-    SPI_Transmit(0x00);
-
+    /* 写配置寄存器 */
+    SPI_Transmit(0x43);  // WREG命令，写寄存器3
+    SPI_Transmit(0x08);  // 配置数据
+    SPI_Transmit(0x04);  // 配置数据
+    SPI_Transmit(0x10);  // 配置数据
+    SPI_Transmit(0x00);  // 配置数据
     vTaskDelay(pdMS_TO_TICKS(1));
 
 
+    // /* 读回寄存器验证配置 */
+    SPI_Transmit(0x23);  // RREG命令，读所有寄存器
+    SPI_Transmit(0xFF);  // 读寄存器值
+    SPI_Transmit(0xFF);
+    SPI_Transmit(0xFF);
+    SPI_Transmit(0xFF);
+    vTaskDelay(pdMS_TO_TICKS(1));
+
+    /* 发送启动命令，开始连续转换模式 */
+    SPI_Transmit(0x08);  // START/SYNC命令
+    vTaskDelay(pdMS_TO_TICKS(1));  // 等待td(SCCS)
+
+    /* 拉高CS结束初始配置 */
+    SPI_CS_HIGH();
+
+    printf("ADS1220 initialization completed\n");
 
     /* 任务循环 */
     while(1)
-    {   
+    {
         if(drdy_flag)
         {
-            printf("DRDY triggered\n");
-            drdy_flag = 0;
+            drdy_flag = 0;  // 清除标志位
+
+            /* 拉低CS开始读数据 */
+            SPI_CS_LOW();
+            vTaskDelay(pdMS_TO_TICKS(1));  // 等待td(CSSC)
+
+            /* 读取24位转换数据 */
+            SPI_Transmit(0xFF);  // 读取高8位
+            SPI_Transmit(0xFF);  // 读取中8位
+            SPI_Transmit(0xFF);  // 读取低8位
+
+            vTaskDelay(pdMS_TO_TICKS(1));  // 等待td(SCCS)
+            SPI_CS_HIGH();  // 拉高CS结束本次读取
         }
-        vTaskDelay(pdMS_TO_TICKS(100));
+        vTaskDelay(pdMS_TO_TICKS(1));
     }
 }
