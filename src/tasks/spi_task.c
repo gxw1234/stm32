@@ -14,6 +14,8 @@
 #define VREF              2.048f    // 参考电压2.048V
 #define ADC_FSR           8388608.0f // 2^23, ADC满量程范围
 
+// #define ADC_FSR           16777216.0f // 2^23, ADC满量程范围
+
 /* 函数声明 */
 static uint8_t Is_ADC_Data_Valid(uint32_t adc_value);
 static float Convert_ADC_To_Voltage(uint32_t adc_value);
@@ -115,20 +117,22 @@ void SPI_Task(void *argument)
 
     /* 写配置寄存器 */
     SPI_Transmit(0x43);  // WREG命令，写寄存器3
-    SPI_Transmit(0x08);  // 配置数据 - 寄存器0：PGA=1, AIN0/AIN1
-    SPI_Transmit(0x04);  // 配置数据 - 寄存器1：DR=20SPS, 连续转换模式
+    SPI_Transmit(0x00);  // 配置数据 - 寄存器0：PGA=1, AIN0/AIN1
+    SPI_Transmit(0xD4);  // 配置数据 - 寄存器1：DR=20SPS, 连续转换模式
     SPI_Transmit(0x10);  // 配置数据 - 寄存器2：IDAC关闭
     SPI_Transmit(0x00);  // 配置数据 - 寄存器3：默认设置
     vTaskDelay(pdMS_TO_TICKS(1));
 
     /* 读回寄存器验证配置 */
-    SPI_Transmit(0x23);  // RREG命令，读所有寄存器
-    SPI_Transmit(0xFF);  // 读寄存器值
-    SPI_Transmit(0xFF);
-    SPI_Transmit(0xFF);
-    SPI_Transmit(0xFF);
-    vTaskDelay(pdMS_TO_TICKS(1));
+    // SPI_Transmit(0x23);  // RREG命令，读所有寄存器
+    // SPI_Transmit(0xFF);  // 读寄存器值
+    // SPI_Transmit(0xFF);
+    // SPI_Transmit(0xFF);
+    // SPI_Transmit(0xFF);
+    // vTaskDelay(pdMS_TO_TICKS(1));
+    SPI_Transmit(0x23);
 
+    vTaskDelay(pdMS_TO_TICKS(1));
     /* 发送启动命令，开始连续转换 */
     SPI_Transmit(0x08);  // START/SYNC命令
     vTaskDelay(pdMS_TO_TICKS(1));
@@ -139,6 +143,7 @@ void SPI_Task(void *argument)
     /* 主循环 */
     while(1)
     {
+        
         static GPIO_PinState last_state = GPIO_PIN_SET;  // 上一次的引脚状态
         GPIO_PinState current_state = READ_DRDY();       // 当前引脚状态
         
@@ -151,6 +156,10 @@ void SPI_Task(void *argument)
             SPI_CS_LOW();
             vTaskDelay(pdMS_TO_TICKS(1));  // 等待td(CSSC)
 
+
+            // SPI_Transmit(0x23);
+
+
             /* 读取24位ADC数据 */
             uint32_t adc_value = 0;
             uint8_t msb = SPI_TransmitReceive(0xFF);  // 读取高8位
@@ -159,7 +168,7 @@ void SPI_Task(void *argument)
             
 
             SPI_CS_HIGH();
-            
+
             /* 组合24位数据 */
             adc_value = (uint32_t)msb << 16 | (uint32_t)mid << 8 | lsb;
             

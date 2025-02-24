@@ -72,7 +72,7 @@ int main(void)
     优先级1
     
     */
-    xTaskCreate(SPI_Task, "SPI", configMINIMAL_STACK_SIZE * 8, NULL, 1, NULL);
+    // xTaskCreate(SPI_Task, "SPI", configMINIMAL_STACK_SIZE * 8, NULL, 1, NULL);
 
     /* 创建I2S任务
     优先级1
