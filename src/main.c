@@ -15,6 +15,7 @@
 #include "tasks/i2s_task.h"
 #include "tasks/i2c_task.h"
 #include "tasks/adc_task.h"
+#include "tasks/lcd_task.h"
 #include <stdio.h>
 
 int main(void)
@@ -79,7 +80,15 @@ int main(void)
     */
     // xTaskCreate(I2S_Task, "I2S", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
 
+    /* 创建LCD任务
+    优先级1
+    */
+    xTaskCreate(LCD_Task, "LCD", configMINIMAL_STACK_SIZE * 2, NULL, 1, NULL);
+
     /* 启动调度器   */
+
+    
+
     vTaskStartScheduler();
     
 }

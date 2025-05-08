@@ -67,6 +67,7 @@ set(PROJECT_SOURCES
     src/tasks/i2s_task.c
     src/tasks/i2c_task.c
     src/tasks/adc_task.c
+    src/tasks/lcd_task.c
 )
 
 # Include directories

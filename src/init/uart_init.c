@@ -8,6 +8,7 @@ UART_HandleTypeDef huart1;
 /* UART初始化函数 */
 void MX_USART1_UART_Init(void)
 {
+    
     huart1.Instance = USART1;
     huart1.Init.BaudRate = 1000000;
     huart1.Init.WordLength = UART_WORDLENGTH_8B;

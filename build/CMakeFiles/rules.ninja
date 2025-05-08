@@ -35,7 +35,7 @@ rule C_COMPILER__gxw_build_product.2eelf_unscanned_
 # Rule for linking C executable.
 
 rule C_EXECUTABLE_LINKER__gxw_build_product.2eelf_
-  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && D:\tool\cmake\cmake_zip\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && D:\tool\cmake\cmake_zip\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking C executable $TARGET_FILE
   restat = $RESTAT
 

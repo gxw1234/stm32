@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "type_traits": "c"
+        "type_traits": "c",
+        "uart_init.h": "c",
+        "bsp_config.h": "c",
+        "gpio_init.h": "c"
     }
 }
